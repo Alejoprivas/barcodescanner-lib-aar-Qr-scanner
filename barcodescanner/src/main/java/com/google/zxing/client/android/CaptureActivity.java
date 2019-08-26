@@ -65,6 +65,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,8 +109,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   private Result savedResultToShow;
   private ViewfinderView viewfinderView;
   private TextView statusView;
-  private Button flipButton;
-  private Button torchButton;
+  private ImageButton flipButton;
+  private ImageButton torchButton;
   private View resultView;
   private Result lastResult;
   private boolean hasSurface;
@@ -191,8 +192,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
     resultView = findViewById(R.id.result_view);
     statusView = (TextView) findViewById(R.id.status_view);
-    flipButton = (Button) findViewById(R.id.flip_button);
-    torchButton = (Button) findViewById(R.id.torch_button);
+    flipButton = (ImageButton) findViewById(R.id.flip_button);
+    torchButton = (ImageButton) findViewById(R.id.torch_button);
 
     handler = null;
     lastResult = null;
