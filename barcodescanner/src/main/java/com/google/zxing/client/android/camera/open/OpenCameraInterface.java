@@ -72,10 +72,21 @@ public final class OpenCameraInterface {
       }
     }
 
-    Camera camera;
+    Camera camera = null;
     if (index < numCameras) {
-      Log.i(TAG, "Opening camera #" + index);
-      camera = Camera.open(index);
+      do {
+          Log.i(TAG, "Opening camera #" + index);
+          try {
+            camera = Camera.open(index);
+          } catch (RuntimeException re) {
+             Log.i(TAG, "Failed opening camera #" + index);
+             if (index >= numCameras - 1) {
+               throw re;
+             } else {
+               index++;
+             }
+          }
+      } while (camera == null);
     } else {
       if (explicitRequest) {
         Log.w(TAG, "Requested camera does not exist: " + cameraId);
