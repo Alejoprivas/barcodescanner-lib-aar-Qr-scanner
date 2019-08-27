@@ -370,19 +370,20 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   }
 
   @Override
+  public void onBackPressed() {
+    if (source == IntentSource.NATIVE_APP_INTENT) {
+      setResult(RESULT_CANCELED);
+      finish();
+    }
+    if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
+      restartPreviewAfterDelay(0L);
+    }
+    super.onBackPressed();
+  }
+
+  @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
     switch (keyCode) {
-      case KeyEvent.KEYCODE_BACK:
-        if (source == IntentSource.NATIVE_APP_INTENT) {
-          setResult(RESULT_CANCELED);
-          finish();
-          return true;
-        }
-        if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
-          restartPreviewAfterDelay(0L);
-          return true;
-        }
-        break;
       case KeyEvent.KEYCODE_FOCUS:
       case KeyEvent.KEYCODE_CAMERA:
         // Handle these events so they don't launch the Camera app
