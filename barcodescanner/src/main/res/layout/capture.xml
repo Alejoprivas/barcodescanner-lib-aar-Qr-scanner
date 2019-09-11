@@ -194,13 +194,46 @@
 
   </LinearLayout>
 
-  <TextView android:id="@+id/status_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/transparent"
-            android:text="@string/msg_default_status"
-            android:textColor="@color/status_text"/>
+
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="80dp"
+      android:layout_gravity="top"
+      android:orientation="vertical"
+      android:padding="20dp"
+      android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:background="@color/transparent"
+        android:text="@string/msg_default_status"
+        android:textAlignment="center"
+        android:textColor="@android:color/white" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="90dp"
+      android:layout_gravity="bottom"
+      android:gravity="center"
+      android:background="@drawable/shape"
+
+      android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:background="@color/transparent"
+        android:src="@drawable/button_switch_icon"
+        />
+  </LinearLayout>
+
 
   <LinearLayout
       android:layout_width="match_parent"

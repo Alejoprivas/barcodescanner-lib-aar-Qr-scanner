@@ -65,7 +65,7 @@
   <string name="msg_default_format">Formato</string>
   <string name="msg_default_meta">Metadata</string>
   <string name="msg_default_mms_subject">Hola</string>
-  <string name="msg_default_status">Coloque un código de barras en el interior del rectángulo del visor para escanear.</string>
+  <string name="msg_default_status">Acerca el código de barras al lector</string>
   <string name="msg_default_time">Tiempo</string>
   <string name="msg_default_type">Tipo</string>
   <string name="msg_encode_contents_failed">No se pudo codificar un código de barras a partir de los datos facilitados.</string>
